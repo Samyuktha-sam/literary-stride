@@ -7,6 +7,8 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { AppLayout } from "@/components/layout/AppLayout";
 import { Auth } from "@/pages/Auth";
+import { Home } from "@/pages/Home";
+import { About } from "@/pages/About";
 import { Dashboard } from "@/pages/Dashboard";
 import { Books } from "@/pages/Books";
 import { Forbidden } from "@/pages/Forbidden";
@@ -23,18 +25,12 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             {/* Public routes */}
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/403" element={<Forbidden />} />
             
             {/* Protected routes */}
-            <Route path="/" element={
-              <ProtectedRoute>
-                <AppLayout>
-                  <Navigate to="/dashboard" replace />
-                </AppLayout>
-              </ProtectedRoute>
-            } />
-            
             <Route path="/dashboard" element={
               <ProtectedRoute>
                 <AppLayout>

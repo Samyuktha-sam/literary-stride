@@ -70,6 +70,15 @@ export const LoginForm = () => {
         </p>
       </div>
 
+      {/* Demo credentials notice */}
+      <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 space-y-2">
+        <h3 className="text-sm font-medium text-primary">Demo Credentials</h3>
+        <div className="text-xs space-y-1 text-muted-foreground">
+          <div><span className="font-medium">Email:</span> admin@bookms.com</div>
+          <div><span className="font-medium">Password:</span> password123</div>
+        </div>
+      </div>
+
       <div className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
